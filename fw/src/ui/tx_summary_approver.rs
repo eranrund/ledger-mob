@@ -256,7 +256,7 @@ impl TxSummaryApprover {
                 // Fetch total information
                 let (token_id, _total_kind, value) = &report.totals[n];
 
-                let value_str = fmt_token_val(*value, *token_id, &mut value_buff);
+                let value_str = fmt_token_val(*value as i64, *token_id, &mut value_buff);
                 let title_str = fmt_page("Total", n, self.num_totals, &mut title_buff);
                 [title_str, value_str].place(Location::Middle, Layout::Centered, false);
             }
