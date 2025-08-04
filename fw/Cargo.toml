@@ -39,24 +39,24 @@ default = [ "applet", "mlsag", "memo", "alloc", "summary", "ident", "noinline", 
 [dependencies]
 nanos_sdk = { git = "https://github.com/LedgerHQ/ledger-nanos-sdk", branch = "master" }
 nanos_ui = { git = "https://github.com/LedgerHQ/ledger-nanos-ui", branch = "master" }
-ledger-proto = { version = "0.1.0", default_features = false }
+ledger-proto = { version = "0.1.0", default-features = false }
 
-getrandom = { version = "0.2.7", default_features = false, features = [ "custom" ] }
-rand_core = { version = "0.6.3", default_features = false }
-hmac-sha512 = { version = "1.1.2", default_features = false }
-strum = { version = "0.24.1", default_features = false }
-hex_fmt = { version = "0.3.0", default_features = false }
-encdec = { version = "0.9.0", default_features = false }
-emstr = { version = "0.2.0", default_features = false }
-heapless = "0.7.16"
+getrandom = { version = "0.2.7", default-features = false, features = [ "custom" ] }
+rand_core = { version = "0.6.3", default-features = false }
+hmac-sha512 = { version = "1.1.2", default-features = false }
+strum = { version = "0.24.1", default-features = false }
+hex_fmt = { version = "0.3.0", default-features = false }
+encdec = { version = "0.9.0", default-features = false }
+emstr = { version = "0.2.0", default-features = false }
+heapless = "0.8.0"
 rngcheck = "0.1.1"
 
-mc-core = { version = "6", default-features = false }
-ledger-mob-core = { path = "../core", default_features = false }
+mc-core = { version = "7", default-features = false }
+ledger-mob-core = { path = "../core", default-features = false }
 
-curve25519-dalek = { version = "4.1.1", default_features = false }
-ed25519-dalek = { version = "2.0.0-pre.0", default_features = false }
-x25519-dalek = { version = "2.0.0-pre.2", default_features = false }
+curve25519-dalek = { version = "4.1.3", default-features = false }
+ed25519-dalek = { version = "2.1.1", default-features = false }
+x25519-dalek = { version = "2.0.1", default-features = false }
 
 libc = "0.2.140"
 rlibc = "1.0.0"
@@ -70,7 +70,7 @@ clear_on_drop = { version = "0.2", default-features = false, features = [ "no_cc
 image = "0.24.3"
 anyhow = "1.0.64"
 quote = "1.0.21"
-chrono = { version = "0.4.26", default_features = false, features = [ "clock" ] }
+chrono = { version = "0.4.26", default-features = false, features = [ "clock" ] }
 
 [dev-dependencies]
 
@@ -132,6 +132,10 @@ mc-fog-sig-authority = { path = "../vendor/mob/fog/sig/authority" }
 mc-util-from-random = { path = "../vendor/mob/util/from-random" }
 mc-transaction-types = { path ="../vendor/mob/transaction/types" }
 mc-transaction-summary = { path ="../vendor/mob/transaction/summary" }
+
+
+# Fork that adds i128 support
+emstr = { git = "http://github.com/eranrund/emstr.git", rev = "08810c8e21034a255d3a50c7cfdab495481aa522" }
 
 # patch nanos_sdk so nanos_ui uses the same version
 # hack to avoid cargo#5478 https://github.com/rust-lang/cargo/issues/5478

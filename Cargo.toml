@@ -24,6 +24,8 @@ exclude = [
     "vendor/rs/ledger-transport-zemu",
 ]
 
+[workspace.package]
+rust-version = "1.83.0"
 
 [profile.test]
 overflow-checks = true
